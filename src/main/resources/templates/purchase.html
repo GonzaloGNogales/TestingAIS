@@ -1,0 +1,18 @@
+<html>
+
+<body>
+	
+	{{^error}}
+	<h1 id="message">Successful purchase</h1>
+	{{/error}}
+	
+	{{#error}}
+	<h1 id="message">Error: {{error}}</h1>
+	{{/error}}
+	
+	<br>
+	
+	<a href="/">Back to home</a>	
+</body>
+
+</html>

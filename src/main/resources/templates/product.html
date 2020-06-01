@@ -1,0 +1,29 @@
+<html>
+
+<body>
+	<h1>{{product.name}}</h1>
+	<b>Cost:</b> {{product.cost}}€<br>
+			
+	{{#outOfStock}}
+	<b>Out of stock!</b>
+	{{/outOfStock}}
+		
+	{{^outOfStock}}
+	<b>Stock:</b> {{product.stock}} units<br>
+	
+	<br>	
+	
+	<form action="/purchase" method="post">
+	
+		<b>Customer ID: </b><input id="customer-id" name="customerId" type="text">
+		
+		<input type="hidden" name="productId" value="{{product.id}}">
+		
+		<input type="submit" value="Purchase">
+	
+	</form>
+	{{/outOfStock}}	
+	
+</body>
+
+</html>

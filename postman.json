@@ -1,0 +1,345 @@
+{
+	"info": {
+		"_postman_id": "bf05f17e-221f-4af2-a056-590adc65422a",
+		"name": "Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "104a209d-6594-44c1-bb77-635a49deb8e7",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"productId\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Test\",\n\t\"cost\": 12,\n\t\"stock\": 10\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/api/products/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/products/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/products/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2bc9dcb-2fe6-411a-878b-2ecc3dae583d",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"customerId\", jsonData.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Test\",\n\t\"credit\": 100\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/api/customers/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update customer credit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Test\",\n\t\"credit\": 110\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/api/customers/{{customerId}}",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						"{{customerId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/customers/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/customers/{{customerId}}",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"customers",
+						"{{customerId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Purchase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8bcd8dee-8c8d-4b89-93cd-170b1a811fd7",
+						"exec": [
+							"if (responseBody) {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    pm.collectionVariables.set(\"purchaseId\", jsonData.id);",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"productId\": {{productId}},\n\t\"customerId\": {{customerId}}\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/api/purchases/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"purchases",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all purchases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/purchases/",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"purchases",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get purchase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/api/purchases/{{purchaseId}}",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"purchases",
+						"{{purchaseId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3de2d1e5-e734-4d4f-88f6-34e9a729e021",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "282ef86c-6ff3-4243-ab90-bea30b2967c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3f5de94d-39e5-4347-b834-a5a58a85a030",
+			"key": "hostname",
+			"value": "localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "3cc5a293-bfdd-4069-8b4c-5ca1d4e23c95",
+			"key": "productId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "618a965c-9acf-4163-8854-b72d1471bd6d",
+			"key": "customerId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "f6c1483d-a93e-45c0-a702-bf99f6bb0290",
+			"key": "purchaseId",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,15 @@
+<html>
+
+<body>
+	<h1>Welcome to Shop!</h1>
+
+	{{#products}}
+	<a id="product-{{id}}" href="/product/{{id}}">{{name}}</a><br>
+	{{/products}}
+	
+	{{^products}}
+	No products
+	{{/products}}
+</body>
+
+</html>
