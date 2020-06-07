@@ -1,8 +1,5 @@
 package es.codeurjc.testing;
 
-import java.util.List;
-import java.util.Arrays;
-
 public class Request {
 	// jUnit Tests Attributes
 	private long idCustomer;
@@ -14,12 +11,6 @@ public class Request {
 	private int notifyValue;
 	private int saveValue;
 	private String message;
-
-	// API Tests Attributes
-	private int statusAPI;
-	private String idAPI;
-	private int idValue;
-	private List<String> messagesAPI;
 
 	// Constructors
 
@@ -46,17 +37,6 @@ public class Request {
 		this.idCustomer = idCustomer;
 		this.idProduct = idProduct;
 		this.message = message;
-	}
-
-	// API Request Constructor
-	public Request(long idCustomer, long idProduct, int statusAPI, String idAPI, int idValue, String message,
-			String messageAPI) {
-		this.idCustomer = idCustomer;
-		this.idProduct = idProduct;
-		this.statusAPI = statusAPI;
-		this.idAPI = idAPI;
-		this.idValue = idValue;
-		this.messagesAPI = Arrays.asList(message, messageAPI);
 	}
 
 	// Getters and Setters
@@ -131,38 +111,6 @@ public class Request {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public int getStatusAPI() {
-		return statusAPI;
-	}
-
-	public void setStatusAPI(int statusAPI) {
-		this.statusAPI = statusAPI;
-	}
-
-	public String getIdAPI() {
-		return idAPI;
-	}
-
-	public void setIdAPI(String idAPI) {
-		this.idAPI = idAPI;
-	}
-
-	public int getIdValue() {
-		return idValue;
-	}
-
-	public void setIdValue(int idValue) {
-		this.idValue = idValue;
-	}
-
-	public List<String> getMessagesAPI() {
-		return messagesAPI;
-	}
-
-	public void setMessagesAPI(List<String> messagesAPI) {
-		this.messagesAPI = messagesAPI;
 	}
 
 }

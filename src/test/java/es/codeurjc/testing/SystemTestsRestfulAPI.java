@@ -1,30 +1,14 @@
 package es.codeurjc.testing;
 
-import java.util.Arrays;
-import java.util.Collection;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.Test;
 import es.codeurjc.shop.Application;
+import io.restassured.http.ContentType;
 
 public class SystemTestsRestfulAPI {
-
-	public static Collection<Object[]> values() {
-
-		Object[][] values = { { new Request(6, 1, 200, "id", 7, null, null) }, // Correct 200 OK
-
-				{ new Request(5, 3, 400, null, 0, "message", "CustomerCreditLimitExceededException") }, // Not enough
-																										// credit 400
-																										// Bad Request
-				{ new Request(4, 2, 400, null, 0, "message", "ProductStockWithdrawExceededException") } // Not enough
-																										// stock 400 Bad
-																										// Request
-		};
-
-		return Arrays.asList(values);
-
-	}
 
 	@BeforeAll
 	public static void setupClass() {
@@ -36,10 +20,43 @@ public class SystemTestsRestfulAPI {
 		Application.stop();
 	}
 
-	@ParameterizedTest
-	@MethodSource("values")
-	public void systemAPITest(Request requests) {
-
+	@Test
+	public void succesfulPurchase() {
+		given()
+			.request()
+				.body("{ \"customerId\" : \"" + 6 + "\", \"productId\" : " + 1 + " }")
+				.contentType(ContentType.JSON).
+		when()
+			.post("http://localhost:8080/api/purchases/").
+		then().assertThat()
+			.statusCode(200)
+			.body("id", equalTo(7));
 	}
-
+	
+	@Test
+	public void noCreditPurchase() {
+		given()
+			.request()
+				.body("{ \"customerId\" : \"" + 5 + "\", \"productId\" : " + 3 + " }")
+				.contentType(ContentType.JSON).
+		when()
+			.post("http://localhost:8080/api/purchases/").
+		then().assertThat()
+			.statusCode(400)
+			.body("message", equalTo("CustomerCreditLimitExceededException"));
+	}
+	
+	@Test
+	public void noStockPurchase() {
+		given()
+			.request()
+				.body("{ \"customerId\" : \"" + 4 + "\", \"productId\" : " + 2 + " }")
+				.contentType(ContentType.JSON).
+		when()
+			.post("http://localhost:8080/api/purchases/").
+		then().assertThat()
+			.statusCode(400)
+			.body("message", equalTo("ProductStockWithdrawExceededException"));
+	}
+	
 }
