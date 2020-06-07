@@ -41,17 +41,10 @@ public class Request {
 		this.message = "Purchase: customer=" + idCustomer + ", product=" + idProduct;
 	}
 
-	// Constructor with given message
-	public Request(long idCustomer, long idProduct, long productCost, int getProductCostValue, int withdrawProductValue,
-			int reserveCreditValue, int notifyValue, int saveValue, String message) {
+	// Constructor with given message for WEB UI System tests
+	public Request(long idCustomer, long idProduct, String message) {
 		this.idCustomer = idCustomer;
 		this.idProduct = idProduct;
-		this.productCost = productCost;
-		this.getProductCostValue = getProductCostValue;
-		this.withdrawProductValue = withdrawProductValue;
-		this.reserveCreditValue = reserveCreditValue;
-		this.notifyValue = notifyValue;
-		this.saveValue = saveValue;
 		this.message = message;
 	}
 

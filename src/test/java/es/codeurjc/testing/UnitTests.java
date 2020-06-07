@@ -51,7 +51,7 @@ public class UnitTests {
 		if (request.getIdProduct() == 2)
 			doThrow(new ProductStockWithdrawExceededException()).when(productSDouble)
 					.withdrawProduct(request.getIdProduct());
-		
+
 		// Throw CustomerCreditLimitExceededException when trying to reserve credit for
 		// a purchase and it is not enough
 		else if (request.getIdCustomer() == 5)
