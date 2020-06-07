@@ -1,7 +1,7 @@
 package es.codeurjc.testing;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ public class SystemTestsRestfulAPI {
 				.contentType(ContentType.JSON).
 		when()
 			.post("http://localhost:8080/api/purchases/").
-		then().assertThat()
+		then()
 			.statusCode(200)
 			.body("id", equalTo(7));
 	}
@@ -41,7 +41,7 @@ public class SystemTestsRestfulAPI {
 				.contentType(ContentType.JSON).
 		when()
 			.post("http://localhost:8080/api/purchases/").
-		then().assertThat()
+		then()
 			.statusCode(400)
 			.body("message", equalTo("CustomerCreditLimitExceededException"));
 	}
@@ -54,7 +54,7 @@ public class SystemTestsRestfulAPI {
 				.contentType(ContentType.JSON).
 		when()
 			.post("http://localhost:8080/api/purchases/").
-		then().assertThat()
+		then()
 			.statusCode(400)
 			.body("message", equalTo("ProductStockWithdrawExceededException"));
 	}
