@@ -1,15 +1,12 @@
 package es.codeurjc.testing;
 
-public class Request {
-	// jUnit Tests Attributes
+public class Request { // Request is an auxiliary class for tests
+
+	// Attributes
+
 	private long idCustomer;
 	private long idProduct;
 	private long productCost;
-	private int getProductCostValue;
-	private int withdrawProductValue;
-	private int reserveCreditValue;
-	private int notifyValue;
-	private int saveValue;
 	private String message;
 
 	// Constructors
@@ -18,17 +15,11 @@ public class Request {
 
 	}
 
-	// Constructor with auto message
-	public Request(long idCustomer, long idProduct, long productCost, int getProductCostValue, int withdrawProductValue,
-			int reserveCreditValue, int notifyValue, int saveValue) {
+	// Constructor for unit tests with doubles
+	public Request(long idCustomer, long idProduct, long productCost) {
 		this.idCustomer = idCustomer;
 		this.idProduct = idProduct;
 		this.productCost = productCost;
-		this.getProductCostValue = getProductCostValue;
-		this.withdrawProductValue = withdrawProductValue;
-		this.reserveCreditValue = reserveCreditValue;
-		this.notifyValue = notifyValue;
-		this.saveValue = saveValue;
 		this.message = "Purchase: customer=" + idCustomer + ", product=" + idProduct;
 	}
 
@@ -63,46 +54,6 @@ public class Request {
 
 	public void setProductCost(long productCost) {
 		this.productCost = productCost;
-	}
-
-	public int getGetProductCostValue() {
-		return getProductCostValue;
-	}
-
-	public void setGetProductCostValue(int getProductCostValue) {
-		this.getProductCostValue = getProductCostValue;
-	}
-
-	public int getWithdrawProductValue() {
-		return withdrawProductValue;
-	}
-
-	public void setWithdrawProductValue(int withdrawProductValue) {
-		this.withdrawProductValue = withdrawProductValue;
-	}
-
-	public int getReserveCreditValue() {
-		return reserveCreditValue;
-	}
-
-	public void setReserveCreditValue(int reserveCreditValue) {
-		this.reserveCreditValue = reserveCreditValue;
-	}
-
-	public int getNotifyValue() {
-		return notifyValue;
-	}
-
-	public void setNotifyValue(int notifyValue) {
-		this.notifyValue = notifyValue;
-	}
-
-	public int getSaveValue() {
-		return saveValue;
-	}
-
-	public void setSaveValue(int saveValue) {
-		this.saveValue = saveValue;
 	}
 
 	public String getMessage() {
