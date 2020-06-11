@@ -19,7 +19,7 @@ pipeline {
 					if(isUnix()) {
 						sh "mvn test"
 					} else {
-						bat "mvn test"
+						bat("mvn test")
 					}
 				}
 			}
