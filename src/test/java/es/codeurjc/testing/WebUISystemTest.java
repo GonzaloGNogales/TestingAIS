@@ -1,7 +1,6 @@
 package es.codeurjc.testing;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterAll;
@@ -16,7 +15,7 @@ import es.codeurjc.shop.Application;
 import es.codeurjc.shop.domain.ShopException;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SystemTestsWeb {
+public class WebUISystemTest {
 
 	// List of navigator drivers needed for this type of tests
 	private List<WebDriver> drivers = new ArrayList<>();

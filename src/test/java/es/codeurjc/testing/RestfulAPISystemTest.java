@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import es.codeurjc.shop.Application;
 import io.restassured.http.ContentType;
 
-public class SystemTestsRestfulAPI {
+public class RestfulAPISystemTest {
 
 	@BeforeAll
 	public static void setupClass() {

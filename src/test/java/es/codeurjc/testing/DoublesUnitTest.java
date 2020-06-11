@@ -18,7 +18,7 @@ import es.codeurjc.shop.domain.purchase.PurchaseRepository;
 import es.codeurjc.shop.domain.purchase.PurchaseService;
 import es.codeurjc.shop.notification.NotificationService;
 
-public class UnitTestsDoubles {
+public class DoublesUnitTest {
 
 	private PurchaseRepository purchaseRepDouble;
 	private CustomerService customerSDouble;
