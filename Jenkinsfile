@@ -7,7 +7,7 @@ pipeline {
 		stage("Preparation") { 
 			steps {
 				git(
-					url: 'https://github.com/GonzaloGNogales/TestingAIS',
+					url: 'https://github.com/GonzaloGNogales/TestingAIS.git',
 					credentialsId: 'developer',
 					branch: 'master'
 				)
@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage("Test") {
 			steps {
-				script{
+				script {
 					if(isUnix()) {
 						sh "./mvnw test"
 					} else {
