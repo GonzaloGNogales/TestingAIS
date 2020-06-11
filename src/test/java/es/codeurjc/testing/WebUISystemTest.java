@@ -10,10 +10,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import es.codeurjc.shop.Application;
 import es.codeurjc.shop.domain.ShopException;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -25,7 +24,7 @@ public class WebUISystemTest {
 
 	@BeforeAll
 	public static void setupClass() {
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
 		Application.start();
 	}
 
@@ -36,7 +35,7 @@ public class WebUISystemTest {
 
 	@BeforeEach
 	public void setupTest() {
-		drivers.add(new ChromeDriver());
+		drivers.add(new FirefoxDriver());
 	}
 
 	@AfterEach
@@ -102,7 +101,7 @@ public class WebUISystemTest {
 		// Given
 		Request requestSuccess = new Request(6, 1, "Successful purchase");
 		Request requestFail = new Request(4, 1, "Error: ProductStockWithdrawExceededException");
-		drivers.add(new ChromeDriver()); // We need another customer to buy last milk brick for forcing the exception
+		drivers.add(new FirefoxDriver()); // We need another customer to buy last milk brick for forcing the exception
 
 		// When
 		drivers.get(0).get("http://localhost:8080"); // Browse main application template
