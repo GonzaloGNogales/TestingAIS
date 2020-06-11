@@ -11,6 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import es.codeurjc.shop.Application;
 import es.codeurjc.shop.domain.ShopException;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -60,6 +63,10 @@ public class WebUISystemTest {
 		drivers.get(0).findElement(By.id("customer-id")).sendKeys(String.valueOf(request.getIdCustomer()));
 		drivers.get(0).findElement(By.xpath("//input[@value='Purchase']")).click(); // Click purchase button
 
+		// Wait for messages to appear to compare them
+		WebDriverWait w = new WebDriverWait(drivers.get(0), 50);
+		w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+
 		String msg = drivers.get(0).findElement(By.id("message")).getText(); // Save response message
 
 		// Then
@@ -79,6 +86,10 @@ public class WebUISystemTest {
 		// Type in buying customer ID
 		drivers.get(0).findElement(By.id("customer-id")).sendKeys(String.valueOf(request.getIdCustomer()));
 		drivers.get(0).findElement(By.xpath("//input[@value='Purchase']")).click(); // Click purchase button
+
+		// Wait for messages to appear to compare them
+		WebDriverWait w = new WebDriverWait(drivers.get(0), 50);
+		w.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
 
 		String msg = drivers.get(0).findElement(By.id("message")).getText(); // Save response message
 
@@ -106,6 +117,12 @@ public class WebUISystemTest {
 
 		drivers.get(0).findElement(By.xpath("//input[@value='Purchase']")).click(); // Click purchase button
 		drivers.get(1).findElement(By.xpath("//input[@value='Purchase']")).click();
+
+		// Wait for messages to appear to compare them
+		WebDriverWait wsuccess = new WebDriverWait(drivers.get(0), 50);
+		WebDriverWait wfail = new WebDriverWait(drivers.get(1), 50);
+		wsuccess.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
+		wfail.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));
 
 		// Finally take messages
 		String msg1 = drivers.get(0).findElement(By.id("message")).getText();
