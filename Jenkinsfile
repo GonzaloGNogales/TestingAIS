@@ -27,7 +27,10 @@ pipeline {
 	} 
 	post {
 		always {
-			junit "TestingAIS/**/target/surefire-reports/TEST-*.xml"
+			junit "target/surefire-reports/TEST-*.xml"
+		}
+		success {
+			archiveArtifacts "log.txt"
 		}
 	}
 }
