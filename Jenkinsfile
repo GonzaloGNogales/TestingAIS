@@ -17,9 +17,9 @@ pipeline {
 			steps {
 				script {
 					if(isUnix()) {
-						sh "./mvnw test"
+						sh "mvn test"
 					} else {
-						bat(/mvnw.cmd test/)
+						bat "mvn test"
 					}
 				}
 			}
