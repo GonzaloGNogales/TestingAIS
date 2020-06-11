@@ -1,0 +1,132 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< es.codeurjc.test:g.gomezn.2017 >-------------------
+[INFO] Building g.gomezn.2017 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ g.gomezn.2017 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ g.gomezn.2017 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ g.gomezn.2017 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Program Files (x86)\Jenkins\workspace\TestingShopApp\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ g.gomezn.2017 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ g.gomezn.2017 ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.codeurjc.testing.DoublesUnitTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.869 s - in es.codeurjc.testing.DoublesUnitTest
+[INFO] Running es.codeurjc.testing.RestfulAPISystemTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+11-06-2020 19:53:09.270 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStarting - Starting ForkedBooter v2.22.2 on DESKTOP-SPFA218 with PID 3304 (started by DESKTOP-SPFA218$ in C:\Program Files (x86)\Jenkins\workspace\TestingShopApp)
+11-06-2020 19:53:09.277 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+11-06-2020 19:53:11.039 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11-06-2020 19:53:11.149 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 95ms. Found 3 JPA repository interfaces.
+11-06-2020 19:53:12.491 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+11-06-2020 19:53:12.509 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+11-06-2020 19:53:12.510 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+11-06-2020 19:53:12.513 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.33]
+11-06-2020 19:53:12.762 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+11-06-2020 19:53:12.763 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2855 ms
+11-06-2020 19:53:13.110 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+11-06-2020 19:53:13.615 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+11-06-2020 19:53:13.822 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-06-2020 19:53:14.027 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.4.12.Final
+11-06-2020 19:53:14.164 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+11-06-2020 19:53:14.538 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+11-06-2020 19:53:15.850 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-06-2020 19:53:15.859 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-06-2020 19:53:17.124 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-06-2020 19:53:17.572 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+11-06-2020 19:53:17.812 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
+11-06-2020 19:53:18.475 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+11-06-2020 19:53:18.543 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+11-06-2020 19:53:18.545 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStarted - Started ForkedBooter in 9.827 seconds (JVM running for 11.852)
+11-06-2020 19:53:21.010 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-06-2020 19:53:21.011 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+11-06-2020 19:53:21.030 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 19 ms
+11-06-2020 19:53:22.363 [http-nio-8080-exec-2] INFO  e.c.s.n.NotificationService.notify - Purchase: customer=6, product=1
+11-06-2020 19:53:22.457 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+11-06-2020 19:53:22.460 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-06-2020 19:53:22.460 [main] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+11-06-2020 19:53:22.471 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+11-06-2020 19:53:22.478 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.17 s - in es.codeurjc.testing.RestfulAPISystemTest
+[INFO] Running es.codeurjc.testing.WebUISystemTest
+11-06-2020 19:53:22.710 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager.detectDriverVersionFromBrowser - Using chromedriver 83.0.4103.39 (since Google Chrome 83 is installed in your machine)
+11-06-2020 19:53:22.740 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager.exportDriver - Exporting webdriver.chrome.driver as C:\Windows\system32\config\systemprofile\.m2\repository\webdriver\chromedriver\win32\83.0.4103.39\chromedriver.exe
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+11-06-2020 19:53:22.877 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStarting - Starting ForkedBooter v2.22.2 on DESKTOP-SPFA218 with PID 3304 (started by DESKTOP-SPFA218$ in C:\Program Files (x86)\Jenkins\workspace\TestingShopApp)
+11-06-2020 19:53:22.879 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+11-06-2020 19:53:23.329 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11-06-2020 19:53:23.378 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 48ms. Found 3 JPA repository interfaces.
+11-06-2020 19:53:23.687 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+11-06-2020 19:53:23.690 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+11-06-2020 19:53:23.690 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+11-06-2020 19:53:23.692 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.33]
+11-06-2020 19:53:23.707 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+11-06-2020 19:53:23.708 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 824 ms
+11-06-2020 19:53:23.893 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+11-06-2020 19:53:23.895 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+11-06-2020 19:53:23.941 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+11-06-2020 19:53:23.960 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+11-06-2020 19:53:24.165 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+11-06-2020 19:53:24.165 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11-06-2020 19:53:24.407 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11-06-2020 19:53:24.467 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+11-06-2020 19:53:24.559 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping.<init> - Adding welcome page template: index
+11-06-2020 19:53:24.661 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+11-06-2020 19:53:24.665 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+11-06-2020 19:53:24.666 [main] INFO  o.a.m.surefire.booter.ForkedBooter.logStarted - Started ForkedBooter in 1.921 seconds (JVM running for 17.973)
+11-06-2020 19:53:30.204 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake.createSession - Detected dialect: W3C
+11-06-2020 19:53:35.858 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake.createSession - Detected dialect: W3C
+11-06-2020 19:53:35.898 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11-06-2020 19:53:35.898 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+11-06-2020 19:53:35.904 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 6 ms
+11-06-2020 19:53:41.276 [http-nio-8080-exec-7] INFO  e.c.s.n.NotificationService.notify - Purchase: customer=6, product=1
+11-06-2020 19:53:46.819 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake.createSession - Detected dialect: W3C
+11-06-2020 19:53:47.646 [http-nio-8080-exec-6] INFO  e.c.s.n.NotificationService.notify - Purchase: customer=6, product=3
+11-06-2020 19:53:51.694 [Forwarding newSession on session null to remote] INFO  o.o.s.remote.ProtocolHandshake.createSession - Detected dialect: W3C
+11-06-2020 19:53:52.887 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+11-06-2020 19:53:52.889 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+11-06-2020 19:53:52.890 [main] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+11-06-2020 19:53:52.893 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+11-06-2020 19:53:52.896 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.371 s - in es.codeurjc.testing.WebUISystemTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  50.115 s
+[INFO] Finished at: 2020-06-11T19:53:53+02:00
+[INFO] ------------------------------------------------------------------------
