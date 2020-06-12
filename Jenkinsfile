@@ -17,7 +17,7 @@ pipeline {
 			steps {
 				script {
 					if(isUnix()) {
-						sh "mvn test > log.txt"
+						sh "./mvnw test > log.txt"
 					} else {
 						bat("mvn test > log.txt")
 					}
